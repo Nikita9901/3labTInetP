@@ -1,10 +1,11 @@
 <html>
 <head>
     <title>Прощай, пользователь!</title>
+    <meta charset="utf-8">
     <script language="JavaScript">
-        window.addEventListener('unload', function () {
-            alert("Спасибо за посещение! Прощайте!");
-            console.log("Спасибо за посещение! Прощайте!");
+        window.addEventListener('beforeunload', function (e) {
+            e.preventDefault();
+            e.returnValue = 'Спасибо за посещение! Прощайте!';
         });
 
     </script>
