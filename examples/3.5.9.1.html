@@ -1,0 +1,30 @@
+<html>
+<head><title>Простейшая страничка</title>
+<script language="JavaScript">
+var yourchoice;
+yourchoice = prompt("Загадайте число от 1 до 4. Можно и другие, но ...", "1, 2, 3 или 4")
+switch (yourchoice)
+{
+case "1":
+ alert("Вы ввели число 1");
+ break;
+case "2":
+ alert("Вы ввели число 2");
+ break;
+case "3":
+ alert("Вы ввели число 3");
+ break;
+case "4":
+ alert("Вы ввели число 4");
+ break;
+default: //эта метка и соответствующие ей операторы предусмотрены для выполнения по умолчанию
+ alert("Вы не ввели число, попадающее в промежуток от 1 до 4");
+ break;
+}
+if((yourchoice !="a") && (yourchoice !="b") && (yourchoice !="c") && (yourchoice !="d")
+&& (yourchoice !="e"))
+ {alert("Если это задание 3.5.9, то вы забыли выполнить его условие.");}
+</script>
+</head>
+<body></body>
+</html>

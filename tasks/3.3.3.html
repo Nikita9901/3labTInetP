@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Определение среднемесячного дохода</title>
+    <script language="JavaScript">
+        function calculateAverageIncome(form) {
+            var incomes = [];
+            
+            for (var i = 1; i <= 6; i++) {
+                var monthIncome = 1.00 * form.elements["m" + i].value;
+                incomes.push(monthIncome);
+            }
+            
+            var averageIncome = incomes.reduce(function (sum, income) {
+                return sum + income;
+            }, 0) / incomes.length;
+            
+            form.elements["result"].value = averageIncome.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h2>Определение моего среднемесячного дохода</h2>
+
+    <form name="incomeForm">
+        Июнь: <input type="text" size="8" name="m1"><br>
+        Июль: <input type="text" size="8" name="m2"><br>
+        Август: <input type="text" size="8" name="m3"><br>
+        Сентябрь: <input type="text" size="8" name="m4"><br>
+        Октябрь: <input type="text" size="8" name="m5"><br>
+        Ноябрь: <input type="text" size="8" name="m6"><br><br>
+
+        Средний доход за шесть месяцев:
+        <input type="text" size="22" name="result"><br><br>
+
+        <input type="button" value="Вычислить" onClick="calculateAverageIncome(incomeForm)">
+        <input type="reset" value="Обновить">
+    </form>
+</body>
+</html>

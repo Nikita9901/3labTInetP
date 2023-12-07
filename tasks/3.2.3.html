@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>Перевод температуры</title>
+<script language="JavaScript">
+function inputCels()
+{
+    var cels = prompt("Введите значение температуры в градусах по Цельсию", "Введите температуру"); //получение входных данных
+    ansFah = Cels2FahCalc(cels); //вызов конвертирующей функции
+    alert(cels + " градусов по Цельсию равно " + ansFah + " градусов по Фаренгейту"); //вохврат результата
+}
+
+function inputFah()
+{
+    var fah = prompt("Введите значение температуры в градусах по Фаренгейту", "Введите температуру");
+    ansCel = Fah2CelsCalc(fah);
+    alert(fah + " градусов по Фаренгейту равно " + ansCel + " градусов по Цельсию");
+}
+
+function inputCelsReomur()
+{
+    var cels = prompt("Введите значение температуры в градусах по Цельсию", "Введите температуру");
+    ansReomur = Cels2ReomurCalc(cels);
+    alert(cels + " градусов по Цельсию равно " + ansReomur + " градусов по Реомюру");
+}
+
+function inputReomurCels()
+{
+    var reomur = prompt("Введите значение температуры в градусах по Цельсию", "Введите температуру");
+    ansCels = Reomur2CelsCalc(reomur);
+    alert(reomur + " градусов по Реомюру равно " + ansCels + " градусов по Цельсию");
+}
+
+function inputFahReomur()
+{
+    var fah = prompt("Введите значение температуры в градусах по Фаренгейту", "Введите температуру");
+    ansReomur = Fah2ReomurCalc(fah);
+    alert(fah + " градусов по Фаренгейту равно " + ansReomur + " градусов по Реомюру");
+}
+
+function inputReomurFah()
+{
+    var reomur = prompt("Введите значение температуры в градусах по Реомюру", "Введите температуру");
+    ansFah = Reomur2FahCalc(reomur);
+    alert(reomur + " градусов по Реомюру равно " + ansFah + " градусов по Френгейту");
+}
+
+function Fah2CelsCalc(fah) //конвертирующая функция
+{
+    var ans = ((Number(fah) - 32) / 1.8);
+    return (ans);
+}
+
+function Cels2FahCalc(cels)
+{
+    var ans = ((1.8 * Number(cels)) + 32);
+    return (ans);
+}
+
+function Cels2ReomurCalc(cels)
+{
+    var ans = (Number(cels) / 5) * 4;
+    return (ans);
+}
+
+function Fah2ReomurCalc(fah)
+{
+    var ans = (Number(fah) / 9) * 4;
+    return (ans);
+}
+
+function Reomur2CelsCalc(reomur)
+{
+    var ans = (Number(reomur) / 4) * 5;
+    return (ans);
+}
+
+function Reomur2FahCalc(reomur)
+{
+    var ans = (Number(reomur) / 4) * 9;
+    return (ans);
+}
+</script>
+</head>
+<body>
+<input type="button" value="Цельсий-Фаренгейт" ondblclick="inputCels();"> //вызов функции по двойному клику
+<br><br>
+<input type="button" value="Фаренгейт-Цельсий" ondblclick="inputFah();">
+<br><br>
+<input type="button" value="Цельсий-Реомюр" ondblclick="inputCelsReomur();">
+<br><br>
+<input type="button" value="Фаренгейт-Реомюр" ondblclick="inputFahReomur();">
+<br><br>
+<input type="button" value="Реомюр-Цельсий" ondblclick="inputReomurCels();">
+<br><br>
+<input type="button" value="Реомюр-Фаренгейт" ondblclick="inputReomurFah();">
+</body>
+</html>

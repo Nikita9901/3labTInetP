@@ -1,0 +1,41 @@
+<html>
+<head><title>Простая страничка: Парольер в тэге HEAD</title>
+<!-- начало скрипта защиты этой страницы паролем -->
+<script language="JavaScript">
+ pass = prompt('Введите пароль, пожалуйста:');
+ if (pass=='pswrdPIP') { alert('Поздравляю! Вы ввели верный пароль!') } else {
+alert('Сожалею, но вы ввели неправильный пароль. Повторите, пожалуйста!'),
+top.location.href="pr3510_refuse.htm" }
+</script>
+<!-- окончание скрипта защиты этой страницы паролем -->
+<!-- далее идет что-то полезное, доступное только лишь при введении пароля -->
+<script language="JavaScript">
+var yourchoice;
+yourchoice = prompt("Загадайте число от 1 до 4. Можно и другие, но ...", "1, 2, 3 или 4")
+switch (yourchoice)
+{
+case "1":
+ alert("Вы ввели число 1");
+ break;
+case "2":
+ alert("Вы ввели число 2");
+ break;
+case "3":
+ alert("Вы ввели число 3");
+ break;
+case "4":
+ alert("Вы ввели число 4");
+ break;
+default: //эта метка и соответствующие ей операторы предусмотрены для выполнения по умолчанию
+ alert("Вы не ввели число, попадающее в промежуток от 1 до 4");
+ break;
+}
+if((yourchoice !="a") && (yourchoice !="b") && (yourchoice !="c") && (yourchoice !="d")
+&& (yourchoice !="e"))
+ {alert("Как? Вы забыли выполнить условие задания 3.5.9 ?");}
+</script>
+</head>
+<body>
+ <A href="../exampl_HTML/task_3_4_PIP.htm">назад - на страницу со списком примеров и заданий.</A><BR>
+</body>
+</html>

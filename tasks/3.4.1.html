@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Простая страница</title>
+    <script language="JavaScript">
+        var rndNum = Math.random();
+
+        rndNum = rndNum * 100;
+
+        alert("1-й радиус = " + rndNum + " м");
+
+        var circleAreaMeters = Math.PI * (rndNum * rndNum);
+        alert("Площадь круга с 1-м радиусом = " + circleAreaMeters.toFixed(2) + " кв. м");
+
+        rndNum = Math.round(rndNum);
+
+        alert("2-й радиус = " + rndNum + " м");
+
+        var circleArea2Meters = Math.PI * (rndNum * rndNum);
+        alert("Площадь круга со 2-м радиусом = " + circleArea2Meters.toFixed(2) + " кв. м");
+
+        var triangleSide = rndNum;
+        var triangleAreaMeters = (Math.sqrt(3) / 4) * Math.pow(triangleSide, 2);
+        alert("Площадь равностороннего треугольника со стороной " + triangleSide + " м = " + triangleAreaMeters.toFixed(2) + " кв. м");
+
+        var squareMillimeters = circleAreaMeters * 1000000;
+        var squareCentimeters = circleAreaMeters * 10000;
+        var squareInches = circleAreaMeters * 1550.0031;
+
+        alert("Площадь круга в миллиметрах: " + squareMillimeters.toFixed(2) + " кв. мм");
+        alert("Площадь круга в сантиметрах: " + squareCentimeters.toFixed(2) + " кв. см");
+        alert("Площадь круга в дюймах: " + squareInches.toFixed(2) + " кв. дюйм");
+        
+    </script>
+</head>
+<body></body>
+</html>

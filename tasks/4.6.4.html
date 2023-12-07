@@ -1,0 +1,45 @@
+<HTML>
+    <HEAD>
+      <TITLE>Периодически сменяющиеся объявления-изображения</TITLE>
+      <LINK REL="stylesheet" HREF="pr424.css" TYPE="text/css">
+      <div class="ad-list" data-src="../image1/img0.jpg" data-duration="3"></div>
+      <div class="ad-list" data-src="../image1/img1.jpg" data-duration="2"></div>
+      <div class="ad-list" data-src="../image1/img2.jpg" data-duration="3"></div>
+      <div class="ad-list" data-src="../image1/img3.jpg"></div>
+      <div class="ad-list" data-src="../image1/img4.jpg" data-duration="3"></div>
+      <div class="ad-list" data-src="../image1/img5.png"></div>
+      <div class="ad-list" data-src="../image1/op-card5.png" data-duration="3"></div>
+      <div class="ad-list" data-src="../image1/4.png"></div>
+      <div class="ad-list" data-src="../image1/1.png" data-duration="3"></div>
+      <div class="ad-list" data-src="../image1/2.png"></div>
+      <div class="ad-list" data-src="../image1/3.png" data-duration="4"></div>
+      <SCRIPT LANGUAGE="JavaScript">
+        var adSet = document.querySelectorAll('.ad-list');
+        adSet.current = 0;
+        var nextImage = document.createElement("IMG");
+  
+        function preLoad() {
+          nextImage.onerror = preLoad;
+          nextImage.src = adSet[adSet.current].dataset.src;
+          nextImage.duration = adSet[adSet.current].dataset.duration || 2000;
+          if (++adSet.current == adSet.length) adSet.current = 0;
+        }
+  
+        function skipImage() {
+          if (nextImage.complete) {
+            document.getElementById('ad').src = nextImage.src;
+            var duration = nextImage.duration;
+            preLoad();
+            window.tm = setTimeout('skipImage()', duration);
+          } else window.tm = setTimeout('skipImage()', 10);
+        }
+  
+        preLoad();
+      </SCRIPT>
+    </HEAD>
+    <BODY ONLOAD="window.tm = setTimeout('skipImage()', 1);" ONUNLOAD="clearTimeout(window.tm);">
+      <H2>Периодически сменяющиеся изображения.</H2>
+      <IMG ID="ad" SRC="../image1/4.png">
+    </BODY>
+  </HTML>
+  

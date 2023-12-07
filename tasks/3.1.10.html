@@ -1,0 +1,49 @@
+<html>
+<head><title>Простая страничка: Парольер в тэге HEAD</title>
+<!-- начало скрипта защиты этой страницы паролем -->
+<script language="JavaScript">
+    var flag = 0;
+    for(i = 0 ; i < 3 ; i++){
+        pass = prompt('Введите пароль, пожалуйста:');
+        if (pass=='22121976nik') { 
+            alert('Поздравляю! Вы ввели верный пароль!') } 
+        else {
+            flag++;
+        }
+    }
+
+    if(flag!=0)
+    alert('Сожалею, но вы ввели неправильный пароль. Повторите, пожалуйста!'),
+top.location.href="../tasks/error.html";
+</script>
+<!-- окончание скрипта защиты этой страницы паролем -->
+<!-- далее идет что-то полезное, доступное только лишь при введении пароля -->
+<script language="JavaScript">
+var yourchoice;
+yourchoice = prompt("Загадайте число от 1 до 4. Можно и другие, но ...", "1, 2, 3 или 4")
+switch (yourchoice)
+{
+case "1":
+ alert("Вы ввели число 1");
+ break;
+case "2":
+ alert("Вы ввели число 2");
+ break;
+case "3":
+ alert("Вы ввели число 3");
+ break;
+case "4":
+ alert("Вы ввели число 4");
+ break;
+default: 
+ alert("Вы не ввели число, попадающее в промежуток от 1 до 4");
+ break;
+}
+if((yourchoice !="a") && (yourchoice !="b") && (yourchoice !="c") && (yourchoice !="d")
+&& (yourchoice !="e"))
+ {alert("Как? Вы забыли выполнить условие задания 3.5.9 ?");}
+</script>
+</head>
+<body>
+</body>
+</html>

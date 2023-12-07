@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>Пример 4_1: DHTML - движение изображения с вращающимся спутником</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <script language="JavaScript1.2">
+        var p1;
+        var sp1; 
+        var Circle = false;
+        var Line = false;
+
+        function initLine() {
+            Line = false;
+            p1 = 24;
+            sp1 = 1;
+            l1.style.left = 24;
+        }
+
+        var timerLine = 10;
+
+        function succLine() {
+            sp1 = 1;
+            p1 += sp1;
+            if (p1 > 700) p1 = 24;
+            l1.style.left = p1;
+            timerLine = setTimeout("succLine()", 200);
+            if (Line == true) stoppedLine();
+        }
+
+        var timerCircle = 10;
+
+        function initCircle() {
+            Circle = false;
+            timerCircle = setInterval('moveImage()', 10);
+        }
+
+        var angle = 0;
+        var radius = 50;
+        var xbegin = 80;
+        var ybegin = 80;
+        var d = document;
+
+        function moveImage() {
+            var rad = angle * Math.PI / 180;
+            d.myimage.style.left = xbegin + radius * Math.sin(rad) - d.myimage.width / 2;
+            d.myimage.style.top = ybegin + radius * Math.cos(rad) - d.myimage.height / 2;
+            angle += 1;
+            if (angle >= 360) angle = 0;
+            if (Circle == true) stoppedCircle();
+        }
+
+        function stoppedCircle() {
+            clearInterval(timerCircle);
+        }
+
+        function stoppedLine() {
+            clearTimeout(timerLine);
+        }
+    </script>
+</head>
+<body onload="initLine()" style="background-color: #e0f7fa;">
+
+<center>
+    <h3>Пример использования слоев: движение изображения с вращающимся спутником</h3>
+    <form name="form1">
+        <input type="button" value="Ускорить спутник" onclick="initCircle()">
+        <input type="button" value="Ускорить вправо" onclick="initLine(); succLine()">
+        <input type="button" value="Вправо" onclick="initLine()">
+        <input type="button" value="Тормоз спутника" onclick="Circle=true">
+        <input type="button" value="Стоп вправо" onclick="Line=true">
+    </form>
+</center>
+
+<table width=878 height=185 border=4 bgcolor="silver" bordercolor="black">
+    <tr>
+        <td>
+            <div id="l1" style="position:absolute; left:24px; background:#a5d6a7; width:178px; height:176px; top:101px;">
+                <img src="../image1/eco1.png" name="mycenter" style="position:absolute; left:80px; top: 80px; width:40px; height:15px">
+                <img src="../image1/eco2.png" name="myimage" style="position:absolute; left:80px; top:130px; width:42px; height:23px">
+            </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

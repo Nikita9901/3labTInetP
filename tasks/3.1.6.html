@@ -1,0 +1,22 @@
+<html>
+<head><title>Простейшая страничка</title>
+<script language="JavaScript">
+var myarray = new Array("","","","","");
+var y=-1, ys="", extent1=".gif", extent2=".jpg"; 
+
+for (x in myarray)
+{
+    y++;
+    ys=y;
+    myarray[x] = "\n<a href=\"../image1/img" + x + extent2 + "\">рис."+ys+"</a>";
+}
+
+alert("Ссылки на мои картинки jpg-формата:"+myarray);
+
+if (extent2 !== ".jpg") {
+    alert("Если это задание 356, то Вы, забыли про фото в формате jpeg");
+}
+</script>
+</head>
+<body></body>
+</html>
